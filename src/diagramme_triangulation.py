@@ -67,5 +67,51 @@ for i in range (n-2) :
 
 
 
-print(len(centres))
-print(len(triangles))
+#print(centres)
+#print(triangles)
+
+lt=len(triangles)
+
+axe_voronoi=[]
+
+for i in range(lt-1):
+    for j in range (i+1,lt):
+        t1= {triangles[i]["p1"] , triangles[i]["p2"] , triangles[i]["p3"]}
+        t2= {triangles[j]["p1"] , triangles[j]["p2"] , triangles[j]["p3"]}
+        
+        t3 = t1.intersection(t2)
+        if len(t3)==2:
+            axe_voronoi.append({centres[i], centres[j]})
+
+cote={}
+for i in range (lt):
+    t=triangles[i] #{'p1': (2.0, 1.0), 'p2': (6.0, 1.0), 'p3': (3.0, 4.0)}
+    p1=t["p1"]
+    p2=t["p2"]
+    p3=t["p3"]
+    if (p1,p2) in cote:
+        cote[(p1,p2)]+=1
+    else:
+        cote[(p1,p2)]=1
+
+    if (p1,p3) in cote:
+        cote[(p1,p3)]+=1
+    else:
+        cote[(p1,p3)]=1
+
+    if (p2,p3) in cote:
+        cote[(p2,p3)]+=1
+    else:
+        cote[(p2,p3)]=1
+#print(cote)
+cote_seul=[]
+
+for key,value in cote.items():
+    print(key,value)
+    
+    if value ==1:
+        cote_seul.append(key)
+
+        
+#print(axe_voronoi)
+print(cote_seul)
