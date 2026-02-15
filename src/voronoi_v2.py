@@ -1,9 +1,8 @@
 from math import ceil
-from random import randint
-import sys
-from PIL import Image
-from matplotlib import pyplot as plt
+from collections import deque
 import numpy as np
+import matplotlib.pyplot as plt
+from collections import deque
 
 
 SCALE_FACTOR = 10
@@ -26,12 +25,6 @@ for i in range(len(points)) :
 height = ceil(max_ordonnee) + (30)
 width = ceil(max_abscisse) + (30)
 
-"""
-Screen = [[]]
-for i in range (width) :
-    for j in range (height) :
-        Screen[i][j] = 0
-"""
 Screen = [[0 for _ in range(height)] for _ in range(width)]
 
 for i in range (len(points)) :
@@ -39,20 +32,27 @@ for i in range (len(points)) :
     y = int(points[i][1])
     Screen[x][y] = i+1
 
-for i in range (width) :
-    for j in range (height) :
-        if(Screen[i][j] != 0):
-            continue
-        dist = sys.maxsize
-        meilleur_index = 0
-        for k in range (len(points)) :
-            point = points[k]
-            x = point[0]
-            y = point[1]
-            current_dist = (x - i) ** 2 + (y - j) ** 2
-            if(current_dist < dist) :
-                Screen[i][j] = k + 1
-                dist = current_dist
+queue = deque()
+
+for i in range(len(points)):
+    x = int(points[i][0])
+    y = int(points[i][1])
+    queue.append((x, y))
+
+while queue:
+    x, y = queue.popleft()
+    current_owner = Screen[x][y]
+    neighbors = [
+        (x + 1, y), (x - 1, y),
+        (x, y + 1), (x, y - 1),
+        (x + 1, y + 1), (x - 1, y - 1),
+        (x + 1, y - 1), (x - 1, y + 1)
+    ]
+    for nx, ny in neighbors:
+        if 0 <= nx < width and 0 <= ny < height:
+            if Screen[nx][ny] == 0:
+                Screen[nx][ny] = current_owner
+                queue.append((nx, ny))
 
 """
 for i in range (width) :
