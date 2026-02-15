@@ -1,3 +1,5 @@
+import drawsvg as draw
+
 def cross_product(p1,p2,p3) :
     x1 , y1 = p1
     x2 , y2 = p2
@@ -8,7 +10,7 @@ def cross_product(p1,p2,p3) :
     x2 -= x3
     y2 -= y3
 
-    return x1*y2 - x2*y1 == 0
+    return (x1*y2 - x2*y1)
 
 def centre_cercle_circonscrit(p1,p2,p3) :
     x1, y1 = p1
@@ -46,7 +48,7 @@ for i in range (n-2) :
             p1 = points[i]
             p2 = points[j]
             p3 = points[k]
-            if(cross_product(p1,p2,p3)) :
+            if(cross_product(p1,p2,p3)==0) :
                 continue
             centre_cercle = centre_cercle_circonscrit(p1,p2,p3)
             rayon_cercle = distance(centre_cercle, p1)
@@ -64,9 +66,6 @@ for i in range (n-2) :
                     "p2" : p2,
                     "p3" : p3,
                 })
-
-
-
 #print(centres)
 #print(triangles)
 
@@ -111,7 +110,85 @@ for key,value in cote.items():
     
     if value ==1:
         cote_seul.append(key)
-
-        
+       
 #print(axe_voronoi)
 print(cote_seul)
+
+axe_voronoi_ext=[]
+
+for cote in cote_seul:
+    A=cote[0]
+    B=cote[1]
+    centre=None
+    P=None
+    for i in range(len(triangles)):
+        t=triangles[i]
+        if A in (t["p1"],t["p2"],t["p3"]) and B in (t["p1"],t["p2"],t["p3"]):
+            centre=centres[i]
+            if t["p1"]!=A and t["p1"]!=B:
+                P=t["p1"]
+            if t["p2"]!=A and t["p2"]!=B:
+                P=t["p2"]
+            if t["p3"]!=A and t["p3"]!=B:
+                P=t["p3"]
+
+    dx=B[0]-A[0]
+    dy=B[1]-A[1]
+    perp_x=-dy
+    perp_y=dx
+
+    if cross_product(A,B,P)>0:
+        perp_x=dy
+        perp_y=-dx
+
+    longueur=200
+    point_fin=(centre[0]+perp_x*longueur,centre[1]+perp_y*longueur)
+    axe_voronoi_ext.append((centre,point_fin))
+#print(axe_voronoi_ext)
+
+taille=800
+#marge pour espace des points extremes
+marge=50
+
+plus_grand_x=0
+plus_grand_y=0
+
+#calcul de coef pour l'affichage
+
+for p in points:
+    if p[0] > plus_grand_x:
+        plus_grand_x=p[0]
+    if p[1] > plus_grand_y:
+        plus_grand_y=p[1]
+
+if plus_grand_x > plus_grand_y:
+    coef=(taille-marge*2)/plus_grand_x
+else:
+    coef=(taille-marge*2)/plus_grand_y
+
+d =draw.Drawing(taille, taille)
+
+#dessin des points et des axes
+
+for p in points:
+    x=p[0]*coef+marge
+    y=p[1]*coef+marge
+    d.append(draw.Circle(x, y, 4, fill='red'))
+
+for axe in axe_voronoi:
+    c1,c2=list(axe)
+    x1=c1[0]*coef+marge
+    y1=c1[1]*coef+marge
+    x2=c2[0]*coef+marge
+    y2=c2[1]*coef+marge
+    d.append(draw.Line(x1, y1, x2, y2, stroke='blue', stroke_width=2))
+
+for axe in axe_voronoi_ext:
+    c1,c2=axe
+    x1=c1[0]*coef+marge
+    y1=c1[1]*coef+marge
+    x2=c2[0]*coef+marge
+    y2=c2[1]*coef+marge
+    d.append(draw.Line(x1, y1, x2, y2, stroke='green', stroke_width=2))
+
+d.save_svg("resultat.svg")
