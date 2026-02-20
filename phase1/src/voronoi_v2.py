@@ -7,7 +7,7 @@ from collections import deque
 
 SCALE_FACTOR = 10
 
-with open("data/data.txt", "r") as f:
+with open("phase1/data/data.txt", "r") as f:
     content = f.read()  
     liste = content.split() 
     points = []

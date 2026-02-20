@@ -30,7 +30,7 @@ def distance(p1, p2):
     
     return (x1 - x2)**2 + (y1 - y2)**2
 
-with open("data/data.txt", "r") as f:
+with open("phase1/data/data.txt", "r") as f:
     content = f.read()  
     liste = content.split() 
     points = []
@@ -191,4 +191,4 @@ for axe in axe_voronoi_ext:
     y2=c2[1]*coef+marge
     d.append(draw.Line(x1, y1, x2, y2, stroke='green', stroke_width=2))
 
-d.save_svg("resultat.svg")
+d.save_svg("phase1/results/resultat.svg")
