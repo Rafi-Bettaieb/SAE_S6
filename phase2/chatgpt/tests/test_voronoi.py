@@ -1,7 +1,6 @@
-import pytest
-from phase2.chatgpt.voronoi import VoronoiDiagram
-
-
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+from voronoi import VoronoiDiagram
 # ============================================================
 # BASIC CONFIGURATIONS
 # ============================================================
