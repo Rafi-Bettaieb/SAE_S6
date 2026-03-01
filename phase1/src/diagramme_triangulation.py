@@ -1,4 +1,5 @@
 import drawsvg as draw
+from matplotlib import pyplot as plt
 
 def cross_product(p1,p2,p3) :
     x1 , y1 = p1
@@ -146,49 +147,29 @@ if __name__ == "__main__":
         axe_voronoi_ext.append((centre,point_fin))
     #print(axe_voronoi_ext)
 
-    taille=800
-    #marge pour espace des points extremes
-    marge=50
+    fig, ax = plt.subplots(figsize=(8, 8))
 
-    plus_grand_x=0
-    plus_grand_y=0
+    xs=[p[0] for p in points]
+    ys=[p[1] for p in points]
 
-    #calcul de coef pour l'affichage
-
-    for p in points:
-        if p[0] > plus_grand_x:
-            plus_grand_x=p[0]
-        if p[1] > plus_grand_y:
-            plus_grand_y=p[1]
-
-    if plus_grand_x > plus_grand_y:
-        coef=(taille-marge*2)/plus_grand_x
-    else:
-        coef=(taille-marge*2)/plus_grand_y
-
-    d =draw.Drawing(taille, taille)
-
-    #dessin des points et des axes
+    xmin,xmax=min(xs)-1, max(xs)+1
+    ymin,ymax=min(ys)-1, max(ys)+1
 
     for p in points:
-        x=p[0]*coef+marge
-        y=p[1]*coef+marge
-        d.append(draw.Circle(x, y, 4, fill='red'))
+        ax.plot(p[0], p[1], 'ro', markersize=6)
 
     for axe in axe_voronoi:
         c1,c2=list(axe)
-        x1=c1[0]*coef+marge
-        y1=c1[1]*coef+marge
-        x2=c2[0]*coef+marge
-        y2=c2[1]*coef+marge
-        d.append(draw.Line(x1, y1, x2, y2, stroke='blue', stroke_width=2))
+        ax.plot([c1[0],c2[0]], [c1[1],c2[1]], 'g-', linewidth=2)
 
     for axe in axe_voronoi_ext:
         c1,c2=axe
-        x1=c1[0]*coef+marge
-        y1=c1[1]*coef+marge
-        x2=c2[0]*coef+marge
-        y2=c2[1]*coef+marge
-        d.append(draw.Line(x1, y1, x2, y2, stroke='green', stroke_width=2))
+        ax.plot([c1[0],c2[0]], [c1[1],c2[1]], 'g-', linewidth=2)
 
-    d.save_svg("phase1/results/resultat.svg")
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(ymin, ymax)
+    ax.set_aspect('equal')
+    ax.invert_yaxis()
+    plt.savefig("phase1/results/resultat.png")
+    plt.savefig("phase1/results/resultat.svg")
+    plt.show()
