@@ -3,8 +3,7 @@ voronoi.py
 Calcul du diagramme de Voronoï par intersection de demi-plans.
 """
 
-from geometry import perpendicular_bisector, clip_polygon
-
+from .geometry import perpendicular_bisector, clip_polygon
 
 class VoronoiDiagram:
 

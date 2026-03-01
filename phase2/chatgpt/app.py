@@ -6,8 +6,8 @@ Interface graphique dynamique adaptée à l'image générée.
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
-from voronoi import VoronoiDiagram
-from svg_export import SVGExporter
+from .voronoi import VoronoiDiagram
+from .svg_export import SVGExporter
 
 
 class VoronoiApp:
