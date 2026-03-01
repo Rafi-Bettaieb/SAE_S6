@@ -1,0 +1,17 @@
+# Fichier d'exemple de points 2D pour le diagramme de Voronoï
+# Format : x y  (une paire par ligne, séparateur espace ou virgule)
+# Les lignes commençant par # sont ignorées.
+
+# Grille aléatoire de 15 points
+2,4
+5.3,4.5
+18,29
+12.5,23.7
+7,9
+15.2,6.8
+0,0
+3.14,2.71
+20,10
+8.6,17.3
+4,12
+9.5,1.2

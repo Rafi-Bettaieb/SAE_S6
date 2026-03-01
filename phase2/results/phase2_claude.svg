@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1200" height="900" viewBox="0 0 1200 900">
+  <title>Diagramme de Voronoï</title>
+  <desc>Voronoï avec 12 sites, généré automatiquement.</desc>
+  <rect width="1200" height="900" fill="#1e1e2e"/>
+  <g id="voronoi-edges" stroke="#89b4fa" stroke-width="1.5" stroke-linecap="round">
+    <line x1="404.80" y1="263.48" x2="420.22" y2="161.65"/>
+    <line x1="404.80" y1="263.48" x2="402.07" y2="266.21"/>
+    <line x1="404.80" y1="263.48" x2="585.21" y2="195.33"/>
+    <line x1="420.22" y1="161.65" x2="346.18" y2="96.22"/>
+    <line x1="420.22" y1="161.65" x2="491.33" y2="75.85"/>
+    <line x1="346.18" y1="96.22" x2="0.00" y2="269.31"/>
+    <line x1="346.18" y1="96.22" x2="429.22" y2="0.00"/>
+    <line x1="927.67" y1="599.08" x2="781.04" y2="518.81"/>
+    <line x1="664.38" y1="387.42" x2="718.82" y2="421.64"/>
+    <line x1="664.38" y1="387.42" x2="546.09" y2="410.23"/>
+    <line x1="664.38" y1="387.42" x2="615.45" y2="205.02"/>
+    <line x1="718.82" y1="421.64" x2="781.04" y2="518.81"/>
+    <line x1="718.82" y1="421.64" x2="999.91" y2="0.00"/>
+    <line x1="781.04" y1="518.81" x2="155.50" y2="900.00"/>
+    <line x1="0.00" y1="366.72" x2="402.07" y2="266.21"/>
+    <line x1="0.00" y1="884.19" x2="546.09" y2="410.23"/>
+    <line x1="402.07" y1="266.21" x2="546.09" y2="410.23"/>
+    <line x1="585.21" y1="195.33" x2="615.45" y2="205.02"/>
+    <line x1="585.21" y1="195.33" x2="491.33" y2="75.85"/>
+    <line x1="615.45" y1="205.02" x2="816.87" y2="0.00"/>
+    <line x1="491.33" y1="75.85" x2="473.32" y2="0.00"/>
+    <line x1="927.67" y1="599.08" x2="637.70" y2="900.00"/>
+    <line x1="927.67" y1="599.08" x2="1200.00" y2="627.75"/>
+  </g>
+  <g id="voronoi-sites" fill="#f38ba8">
+    <circle cx="373.79" cy="153.10" r="4.0"/>
+    <circle cx="373.79" cy="153.10" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="467.10" cy="167.24" r="4.0"/>
+    <circle cx="467.10" cy="167.24" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="826.21" cy="860.00" r="4.0"/>
+    <circle cx="826.21" cy="860.00" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="670.69" cy="710.14" r="4.0"/>
+    <circle cx="670.69" cy="710.14" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="515.17" cy="294.48" r="4.0"/>
+    <circle cx="515.17" cy="294.48" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="747.03" cy="232.28" r="4.0"/>
+    <circle cx="747.03" cy="232.28" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="317.24" cy="40.00" r="4.0"/>
+    <circle cx="317.24" cy="40.00" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="406.03" cy="116.63" r="4.0"/>
+    <circle cx="406.03" cy="116.63" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="882.76" cy="322.76" r="4.0"/>
+    <circle cx="882.76" cy="322.76" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="560.41" cy="529.17" r="4.0"/>
+    <circle cx="560.41" cy="529.17" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="430.34" cy="379.31" r="4.0"/>
+    <circle cx="430.34" cy="379.31" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+    <circle cx="585.86" cy="73.93" r="4.0"/>
+    <circle cx="585.86" cy="73.93" r="7.0" fill="none" stroke="#f38ba8" stroke-width="1" opacity="0.4"/>
+  </g>
+  <g id="voronoi-labels" fill="#cdd6f4" font-family="monospace" font-size="10">
+    <text x="381.79" y="147.10" text-anchor="start">(2.0, 4.0)</text>
+    <text x="475.10" y="161.24" text-anchor="start">(5.3, 4.5)</text>
+    <text x="834.21" y="854.00" text-anchor="start">(18.0, 29.0)</text>
+    <text x="678.69" y="704.14" text-anchor="start">(12.5, 23.7)</text>
+    <text x="523.17" y="288.48" text-anchor="start">(7.0, 9.0)</text>
+    <text x="755.03" y="226.28" text-anchor="start">(15.2, 6.8)</text>
+    <text x="325.24" y="34.00" text-anchor="start">(0.0, 0.0)</text>
+    <text x="414.03" y="110.63" text-anchor="start">(3.1, 2.7)</text>
+    <text x="890.76" y="316.76" text-anchor="start">(20.0, 10.0)</text>
+    <text x="568.41" y="523.17" text-anchor="start">(8.6, 17.3)</text>
+    <text x="438.34" y="373.31" text-anchor="start">(4.0, 12.0)</text>
+    <text x="593.86" y="67.93" text-anchor="start">(9.5, 1.2)</text>
+  </g>
+  <g id="legend" fill="#a6adc8" font-family="sans-serif" font-size="11">
+    <text x="10" y="888">Algorithme : Bowyer-Watson + Delaunay dual</text>
+    <text x="10" y="874">Arêtes : 27</text>
+    <text x="10" y="860">Sites : 12</text>
+  </g>
+</svg>
