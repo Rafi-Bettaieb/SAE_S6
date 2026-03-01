@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from typing import List, Tuple
-from geometry import Vertex
+from phase2.grok.src.geometry import Vertex
 from algorithms import delaunay_triangulate, compute_voronoi_edges, clip_line
-from utils import load_points_from_file
+from phase2.grok.src.utils import load_points_from_file
 
 class VoronoiApp:
     def __init__(self, root):

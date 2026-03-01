@@ -1,6 +1,6 @@
 import pytest
 import math
-from geometry import Vertex, Triangle
+from phase2.grok.src.geometry import Vertex, Triangle
 
 @pytest.fixture
 def sample_triangle():

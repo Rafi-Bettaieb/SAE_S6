@@ -1,5 +1,5 @@
 from typing import List
-from geometry import Vertex
+from phase2.grok.src.geometry import Vertex
 
 def load_points_from_file(filename: str) -> List[Vertex]:
     points = []

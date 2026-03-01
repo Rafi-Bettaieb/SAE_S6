@@ -1,7 +1,7 @@
 import math
 from collections import defaultdict
 from typing import List, Tuple, Optional
-from geometry import Vertex, Edge, Triangle
+from phase2.grok.src.geometry import Vertex, Edge, Triangle
 
 def super_triangle(points: List[Vertex]) -> Triangle:
     minx = min(p.x for p in points)

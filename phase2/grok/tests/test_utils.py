@@ -1,6 +1,6 @@
 import pytest
-from geometry import Vertex
-from utils import load_points_from_file
+from phase2.grok.src.geometry import Vertex
+from phase2.grok.src.utils import load_points_from_file
 
 @pytest.fixture
 def mock_points_file(tmp_path):

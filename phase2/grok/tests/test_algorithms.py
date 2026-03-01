@@ -1,5 +1,5 @@
 import pytest
-from geometry import Vertex
+from phase2.grok.src.geometry import Vertex
 from algorithms import delaunay_triangulate, clip_line
 
 @pytest.fixture
